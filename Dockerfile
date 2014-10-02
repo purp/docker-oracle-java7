@@ -1,7 +1,7 @@
 # Based on https://github.com/akisei/dockerfiles/blob/master/oracle-java7/Dockerfile
 # See also http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
 
-FROM ubuntu:14.04
+FROM ubuntu:14.10
 
 MAINTAINER Martijn Koster "https://github.com/makuk66"
 
@@ -18,7 +18,7 @@ ENV LC_ALL     en_US.UTF-8
 # Install java
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
 RUN add-apt-repository ppa:webupd8team/java
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade
+RUN DEBIAN_FRONTEND=noninteractive apt-get update
 
 # automatically accept oracle license
 RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
