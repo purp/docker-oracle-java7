@@ -27,7 +27,7 @@ RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install oracle-java7-installer
 RUN update-alternatives --display java
 # set the java environment variables for when you "bash -l"
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install oracle-java7-set-default && apt-get clean
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install oracle-java7-set-default && apt-get clean && java -version
 
 # set the JAVA_HOME explicitly
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
