@@ -21,7 +21,7 @@ RUN add-apt-repository ppa:webupd8team/java
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 
 # automatically accept oracle license
-RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 
 # and install java 7 oracle jdk
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install oracle-java7-installer
